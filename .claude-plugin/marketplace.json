@@ -1,0 +1,19 @@
+{
+  "name": "claude-llm-agents",
+  "owner": {
+    "name": "Yoobin.Jo"
+  },
+  "metadata": {
+    "description": "Gemini CLI & Codex CLI as specialized sub-agents for Claude Code",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "claude-llm-agents",
+      "source": "./",
+      "description": "Use Gemini (analysis) and Codex (execution) as specialized sub-agents orchestrated by Claude.",
+      "category": "agents",
+      "tags": ["gemini", "codex", "agents", "analysis", "llm", "multi-agent"]
+    }
+  ]
+}
