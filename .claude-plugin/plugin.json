@@ -1,5 +1,5 @@
 {
-  "name": "llm-agents",
+  "name": "claude-llm-agents",
   "version": "1.0.0",
   "description": "Gemini CLI & Codex CLI as specialized sub-agents for Claude Code",
   "author": {
