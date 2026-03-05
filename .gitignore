@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node.js (if needed for tooling)
+node_modules/
+npm-debug.log*
+
+# Temp files
+/tmp/gemini-*.txt
+/tmp/codex-*.txt
+/tmp/llm-review-*.txt
+
+# Secrets
+.env
+.env.local
+*.key
