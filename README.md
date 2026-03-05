@@ -93,36 +93,30 @@ command -v codex && echo "Codex OK"
 
 ### Claude Code 플러그인으로 설치
 
-#### 방법 1: Claude Code UI에서 설치 (권장)
+#### 방법 1: 마켓플레이스로 추가 (권장)
 
-1. Claude Code 실행
-2. 좌측 하단 **설정(⚙️)** 클릭
-3. **Plugins** 탭 선택
-4. **Install Plugin** 버튼 클릭
-5. 아래 URL 입력:
-   ```
-   https://github.com/Dev-RubinJo/claude-llm-agents
-   ```
-6. **Install** 확인 → Claude Code 재시작
-
-#### 방법 2: 슬래시 커맨드로 설치
-
-Claude Code 채팅창에서 직접 입력:
+Claude Code 채팅창에서 GitHub 레포를 마켓플레이스로 등록합니다:
 
 ```
-/install-plugin https://github.com/Dev-RubinJo/claude-llm-agents
+/plugin marketplace add Dev-RubinJo/claude-llm-agents
 ```
 
-#### 방법 3: 로컬 경로로 설치 (개발/수정 시)
+등록 후 플러그인을 설치합니다:
 
-레포를 클론한 후 로컬 경로로 설치:
+```
+/plugin install claude-llm-agents@claude-llm-agents
+```
+
+#### 방법 2: 로컬 경로로 설치 (개발/수정 시)
+
+레포를 클론한 후 로컬 마켓플레이스로 등록:
 
 ```bash
 git clone https://github.com/Dev-RubinJo/claude-llm-agents
 ```
 
 ```
-/install-plugin /path/to/claude-llm-agents
+/plugin marketplace add /path/to/claude-llm-agents
 ```
 
 ---
