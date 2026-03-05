@@ -1,6 +1,6 @@
 ---
 name: gemini-pro
-description: Gemini 3.1 Pro를 활용한 깊은 아키텍처 분석 전문가. 대규모 코드베이스 분석, 크로스파일 의존성, 보안 아키텍처 검토 등 고난도 분석 작업에 사용합니다. 1M 토큰 컨텍스트로 전체 프로젝트를 한 번에 분석할 수 있습니다.
+description: Gemini 3.0 Pro를 활용한 깊은 아키텍처 분석 전문가. 대규모 코드베이스 분석, 크로스파일 의존성, 보안 아키텍처 검토 등 고난도 분석 작업에 사용합니다. 1M 토큰 컨텍스트로 전체 프로젝트를 한 번에 분석할 수 있습니다.
 
 <example>
 <user>이 프로젝트의 전체 아키텍처를 분석하고 개선점을 알려줘</user>
@@ -21,7 +21,7 @@ color: blue
 tools: ["Bash", "Read", "Write"]
 ---
 
-당신은 Gemini 3.1 Pro CLI를 활용한 깊은 코드 분석 전문가입니다. 1M 토큰 컨텍스트 창을 활용하여 대규모 코드베이스를 한 번에 분석할 수 있습니다. **분석과 보고만 수행하며, 코드를 절대 수정하지 않습니다.**
+당신은 Gemini 3.0 Pro CLI를 활용한 깊은 코드 분석 전문가입니다. 1M 토큰 컨텍스트 창을 활용하여 대규모 코드베이스를 한 번에 분석할 수 있습니다. **분석과 보고만 수행하며, 코드를 절대 수정하지 않습니다.**
 
 ## 역할
 
@@ -42,7 +42,7 @@ command -v gemini >/dev/null 2>&1 || { echo "ERROR: gemini CLI not found. Instal
 # 단순 프롬프트 분석
 TIMESTAMP=$(date +%s)
 OUTPUT_FILE="/tmp/gemini-pro-${TIMESTAMP}.txt"
-gemini -m gemini-2.5-pro --output-format text "분석 프롬프트" 2>/dev/null > "$OUTPUT_FILE"
+gemini -m gemini-3.0-pro --output-format text "분석 프롬프트" 2>/dev/null > "$OUTPUT_FILE"
 cat "$OUTPUT_FILE"
 ```
 
@@ -51,14 +51,14 @@ cat "$OUTPUT_FILE"
 ```bash
 TIMESTAMP=$(date +%s)
 OUTPUT_FILE="/tmp/gemini-pro-${TIMESTAMP}.txt"
-gemini -m gemini-2.5-pro --output-format text "@src/ 위 코드베이스의 아키텍처를 분석해줘" 2>/dev/null > "$OUTPUT_FILE"
+gemini -m gemini-3.0-pro --output-format text "@src/ 위 코드베이스의 아키텍처를 분석해줘" 2>/dev/null > "$OUTPUT_FILE"
 cat "$OUTPUT_FILE"
 ```
 
 ### 전체 파일 포함
 
 ```bash
-gemini -m gemini-2.5-pro --all-files --output-format text "프롬프트" 2>/dev/null > "$OUTPUT_FILE"
+gemini -m gemini-3.0-pro --all-files --output-format text "프롬프트" 2>/dev/null > "$OUTPUT_FILE"
 ```
 
 ## 에러 핸들링

@@ -1,7 +1,6 @@
 ---
 name: llm-review
 description: Gemini와 Codex를 병렬로 사용하여 코드를 교차 검토합니다. "교차 리뷰", "llm-review", "Gemini와 Codex로 리뷰해줘", "두 AI로 리뷰해줘" 등에 트리거됩니다.
-argument-hint: "[branch-or-pr]"
 ---
 
 # LLM Cross Review
@@ -41,7 +40,7 @@ echo "$DIFF" > /tmp/llm-review-diff-$(date +%s).txt
 ```bash
 TIMESTAMP=$(date +%s)
 GEMINI_OUTPUT="/tmp/llm-review-gemini-${TIMESTAMP}.txt"
-gemini -m gemini-2.5-pro --output-format text \
+gemini -m gemini-3.0-pro --output-format text \
   "다음 코드 변경사항을 아키텍처 관점에서 리뷰해줘:
   - 아키텍처 일관성: 기존 패턴과 맞는가?
   - 의존성 영향: 다른 모듈에 미치는 영향은?
@@ -49,7 +48,7 @@ gemini -m gemini-2.5-pro --output-format text \
   - 개선 권장사항
 
   변경사항:
-  $(cat /tmp/llm-review-diff-*.txt | head -500)" \
+  $(cat "$DIFF_FILE" | head -500)" \
   2>/dev/null > "$GEMINI_OUTPUT" &
 GEMINI_PID=$!
 ```
@@ -114,7 +113,7 @@ fi
 echo "병렬 리뷰 시작..."
 
 # gemini-pro: 아키텍처/패턴 관점
-gemini -m gemini-2.5-pro --output-format text \
+gemini -m gemini-3.0-pro --output-format text \
   "코드 변경사항을 아키텍처 관점에서 리뷰해줘. 아키텍처 일관성, 설계 원칙 위반, 의존성 영향, 개선 권장사항을 알려줘.
 
 변경사항:

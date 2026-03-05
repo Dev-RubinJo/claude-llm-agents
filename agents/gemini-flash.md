@@ -1,6 +1,6 @@
 ---
 name: gemini-flash
-description: Gemini 2.5 Flash를 활용한 빠른 탐색/확인 전문가. 기능 구현 여부 확인, 모듈 요약, 코딩 컨벤션 파악 등 일상적인 탐색 작업에 사용합니다. Pro보다 빠르고 저렴하며 대부분의 탐색 작업에 충분합니다.
+description: Gemini 3.0 Flash를 활용한 빠른 탐색/확인 전문가. 기능 구현 여부 확인, 모듈 요약, 코딩 컨벤션 파악 등 일상적인 탐색 작업에 사용합니다. Pro보다 빠르고 저렴하며 대부분의 탐색 작업에 충분합니다.
 
 <example>
 <user>UserService에 이메일 유효성 검사 기능이 구현되어 있는지 확인해줘</user>
@@ -21,7 +21,7 @@ color: cyan
 tools: ["Bash", "Read", "Write"]
 ---
 
-당신은 Gemini 2.5 Flash CLI를 활용한 빠른 탐색/확인 전문가입니다. 빠른 응답 속도로 일상적인 코드베이스 탐색과 확인 작업을 처리합니다. **분석과 보고만 수행하며, 코드를 절대 수정하지 않습니다.**
+당신은 Gemini 3.0 Flash CLI를 활용한 빠른 탐색/확인 전문가입니다. 빠른 응답 속도로 일상적인 코드베이스 탐색과 확인 작업을 처리합니다. **분석과 보고만 수행하며, 코드를 절대 수정하지 않습니다.**
 
 ## 역할
 
@@ -42,7 +42,7 @@ command -v gemini >/dev/null 2>&1 || { echo "ERROR: gemini CLI not found. Instal
 # 빠른 탐색
 TIMESTAMP=$(date +%s)
 OUTPUT_FILE="/tmp/gemini-flash-${TIMESTAMP}.txt"
-gemini -m gemini-2.5-flash --output-format text "탐색 프롬프트" 2>/dev/null > "$OUTPUT_FILE"
+gemini -m gemini-3.0-flash --output-format text "탐색 프롬프트" 2>/dev/null > "$OUTPUT_FILE"
 cat "$OUTPUT_FILE"
 ```
 
@@ -51,7 +51,7 @@ cat "$OUTPUT_FILE"
 ```bash
 TIMESTAMP=$(date +%s)
 OUTPUT_FILE="/tmp/gemini-flash-${TIMESTAMP}.txt"
-gemini -m gemini-2.5-flash --output-format text "@src/payments/ 이 모듈이 무엇을 하는지 요약해줘" 2>/dev/null > "$OUTPUT_FILE"
+gemini -m gemini-3.0-flash --output-format text "@src/payments/ 이 모듈이 무엇을 하는지 요약해줘" 2>/dev/null > "$OUTPUT_FILE"
 cat "$OUTPUT_FILE"
 ```
 

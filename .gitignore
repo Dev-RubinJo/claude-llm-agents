@@ -13,10 +13,6 @@
 node_modules/
 npm-debug.log*
 
-# Temp files
-/tmp/gemini-*.txt
-/tmp/codex-*.txt
-/tmp/llm-review-*.txt
 
 # Secrets
 .env
